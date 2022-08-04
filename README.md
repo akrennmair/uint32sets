@@ -10,7 +10,7 @@ I had a problem that boiled down to 2 sub-problems:
 * is x ∈ E ?
 
 In the specific program, the `add` operation to the set took up the vast 
-majority of the total CPU time, i.e. `adding` elements to the set as fast as 
+majority of the total CPU time, i.e. adding elements to the set as fast as 
 possible is the #1 point for optimization. Also, counting had to be precise,
 so probabilistic data structure like HyperLogLog and Bloom filters were out of 
 the question.
