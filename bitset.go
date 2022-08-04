@@ -41,7 +41,7 @@ func (s *slotBitmapSet) contains(i uint32) bool {
 	}
 
 	bitmapIdx := int(lowerWord / 8)
-	mask := byte(lowerWord % 8)
+	mask := byte(1 << (lowerWord % 8))
 	if (*bm)[bitmapIdx]&mask == mask {
 		return true
 	}

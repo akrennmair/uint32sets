@@ -33,7 +33,9 @@ func BenchmarkAll(b *testing.B) {
 				for _, num := range allNumbers {
 					s.add(num)
 				}
-				s.contains(containsCheckNumber)
+				if !s.contains(containsCheckNumber) {
+					b.Fatalf("number %d was added but could not be found", containsCheckNumber)
+				}
 				if l := s.length(); l != 20_000 {
 					b.Fatalf("expected length of 20000, got %d", l)
 				}
